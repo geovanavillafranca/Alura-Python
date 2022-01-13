@@ -1,13 +1,14 @@
+from random import randint
+
 print('*********************************')
 print('Bem-vindo ao jogo de adivinhação!')
 print('*********************************')
 
 tentativas = 3
-numero_secreto = 42
+numero_secreto = randint(1, 100)
 
 for rodada in range(1, tentativas + 1):
     print(f'Tentativa {rodada} de {tentativas}')
-
 
 
     chute_str = int(input('Digite um número entre 1 e 100: '))
