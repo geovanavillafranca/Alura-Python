@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./lidando_com_entrada_do_usuario_02/jogos"
+    ]
+}
