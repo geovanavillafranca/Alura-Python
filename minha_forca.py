@@ -31,8 +31,11 @@ def jogar():
                 print('Você se enforcou!')
                 enforcou = True
             print(f"Seus chutes: {letras_erradas}")
-            
+        elif chute in letras_acertadas:
+            print('Você já chutou essa letra.')
+
         else:
+
             for letra in palavra_secreta:
 
                 if chute.upper() == letra.upper():
