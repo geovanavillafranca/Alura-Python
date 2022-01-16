@@ -4,7 +4,7 @@ def jogar():
     print('***Bem-vindo ao jogo de Forca!***')
     print('*********************************')
 
-    palavra_secreta = "python"
+    palavra_secreta = "python".upper()
     letras_acertadas = []
     enforcou = False
     acertou = False
@@ -16,19 +16,17 @@ def jogar():
 
     print(letras_acertadas)
 
-    errou = len(palavra_secreta)
+    erros = 0
     # enquanto nao enforcou e nao acertou
     while not enforcou and not acertou:
 
-        chute = input('Qual letra? ').strip()
+        chute = input('Qual letra? ').strip().upper()
 
         index = 0
         if chute not in palavra_secreta:
             letras_erradas.append(chute)
-            errou -= 1
-            if errou == 0:
-                print('Você se enforcou!')
-                enforcou = True
+            erros += 1
+                
             print(f"Seus chutes: {letras_erradas}")
         elif chute in letras_acertadas:
             print('Você já chutou essa letra.')
@@ -39,14 +37,17 @@ def jogar():
 
                 if chute.upper() == letra.upper():
                     letras_acertadas[index] = letra
-                    contador += 1
-                    if contador == len(palavra_secreta):
+                    if "_" not in letras_acertadas:
                         print('Parabéns! Você acertou a palavra secreta!')
                         acertou = True
 
                 index += 1
-
             print(letras_acertadas)
+        
+        enforcou = erros == 6
+        if enforcou:
+            print('Você perdeu!')
+
 
     print('Fim do jogo')
 
