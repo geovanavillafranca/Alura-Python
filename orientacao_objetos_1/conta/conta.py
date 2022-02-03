@@ -22,6 +22,12 @@ class Conta:
         self.saca(valor)
         destino.deposita(valor)
 
+    @property   	
+    def saldo(self):
+        return self.__saldo
+
+
+
 
 
 
